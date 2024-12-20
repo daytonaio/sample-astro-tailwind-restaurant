@@ -1,34 +1,54 @@
-This repository contains a README file sample for Daytona Samples and the MIT License.
 
-It can be used as a template to create sample repositories that can be added into [Daytona](https://github.com/daytonaio/daytona).
+<h1 align="center">Grill & Thrill Restaurant</h1>
 
-Once you finish your sample and it gets merged, you can open a PR in the Daytona repo and submit the sample into the [index file](https://github.com/daytonaio/daytona/blob/main/hack/samples/index.json).
+# Sample Astro
 
-# Sample <LANGUAGE/FRAMEWORK>
+# Description
+A modern, responsive restaurant website built with Astro.js and TailwindCSS, showcasing a Nepali restaurant's menu, team, and story.
+Daytona is used as a development environment manager to streamline the development process.
 
-Sample description
+## Table of Contents
 
----
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Technologies](#technologies)
+- [License](#license)
 
-## 🚀 Getting Started  
 
-### Open Using Daytona  
+## Getting Started
 
-1. **Install Daytona**: Follow the [Daytona installation guide](https://www.daytona.io/docs/installation/installation/).  
-2. **Create the Workspace**:  
-   ```bash  
-   daytona create <SAMPLE_REPO_URL> 
-   ```  
+### Open Using Daytona
 
-... MORE STEPS IF NEEDED ...
+1. **Install Daytona**: Follow the [Daytona installation guide](https://www.daytona.io/docs/installation/installation/).
+2. **Create the Workspace**:
+   ```bash
+   daytona create https://github.com/daytonaio/sample-astro-tailwind-restaurant
+   ```
+3. **Start the Application**:
+    ```bash
+    npm run dev
+    ```
 
-4. **Start the Application**:  
-   ```bash  
-   command to start the app
-   ```  
+## Features
 
----
+- **Responsive Design**: Fully responsive layout that works seamlessly across all devices
+- **Modern UI**: Clean and intuitive user interface with smooth animations
+- **Menu Management**: Interactive menu display with filtering options for veg/non-veg items
+- **Key Pages**:
+  - Home page with restaurant highlights and featured dishes
+  - About page featuring the restaurant's story and team
+  - Detailed menu page with filtering capabilities
 
-## ✨ Features  
 
-List of sample features (e.g. realtime chat app, standardized development environment with devcontainers)
+## Technologies
+
+This project is built using the following technologies:
+- Daytona: Development Environment Manager.
+- Astro: A powerful web framework for building fast and dynamic websites.
+- Tailwind CSS: Utility-first CSS framework for styling.
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

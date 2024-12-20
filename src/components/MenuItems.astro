@@ -1,0 +1,110 @@
+---
+interface MenuItem {
+    name: string;
+    description: string;
+    type: string;
+    price: string;
+}
+
+interface MenuContent {
+    frontmatter: {
+        title: string;
+        items: MenuItem[];
+    };
+}
+const foodTypes = ["veg", "non-veg"];
+const menuItemsMarkdown = Object.values(
+    import.meta.glob<MenuContent>("../content/menu/nepalese_menu.md", {
+        eager: true,
+    }),
+)[0].frontmatter;
+const menuItems = menuItemsMarkdown.items;
+---
+
+<div class="min-h-screen bg-gray-100">
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 mb-8">
+            Our Full Menu
+        </h1>
+
+        <!-- Add Filter Section -->
+        <div class="mb-6">
+            <h2 class="text-xl font-bold mb-2">Filter by Type:</h2>
+            <div class="flex gap-4" id="filters">
+                {
+                    foodTypes.map((type) => (
+                        <label class="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                value={type}
+                                checked
+                                class="form-checkbox h-5 w-5 text-blue-600"
+                            />
+                            <span class="capitalize">{type}</span>
+                        </label>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="menu-items">
+            {
+                menuItems.map((item) => (
+                    <div
+                        class="bg-white shadow-md rounded-lg overflow-hidden menu-item"
+                        data-type={item.type}
+                    >
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">
+                                        {item.name}
+                                    </h3>
+                                    {item.type === "non-veg" ? (
+                                        <button class="mt-1 rounded-md bg-red-500 text-white px-2 font-semibold">
+                                            {item.type}
+                                        </button>
+                                    ) : (
+                                        <button class="mt-1 rounded-md bg-blue-500 text-white px-2 font-semibold">
+                                            {item.type}
+                                        </button>
+                                    )}
+                                </div>
+                                <span class="text-amber-600 font-bold">
+                                    {item.price}
+                                </span>
+                            </div>
+                            <p class="mt-2 text-gray-600">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</div>
+
+<script>
+    function handleFilter() {
+        const checkedTypes = Array.from(
+            document.querySelectorAll("#filters input:checked"),
+        ).map((checkbox) => (checkbox as HTMLInputElement).value);
+
+        const menuItems = document.querySelectorAll(".menu-item");
+
+        menuItems.forEach((item) => {
+            const itemType = (item as HTMLElement).dataset.type as string;
+            if (checkedTypes.includes(itemType)) {
+                (item as HTMLElement).style.display = "";
+            } else {
+                (item as HTMLElement).style.display = "none";
+            }
+        });
+    }
+
+    // Add event listeners to checkboxes
+    document
+        .querySelectorAll('#filters input[type="checkbox"]')
+        .forEach((checkbox) => {
+            checkbox.addEventListener("change", handleFilter);
+        });
+</script>

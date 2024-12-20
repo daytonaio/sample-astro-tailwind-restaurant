@@ -1,0 +1,6 @@
+{
+  "name": "Astro Restaurant Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [4321],
+  "postCreateCommand": "npm install"
+}
