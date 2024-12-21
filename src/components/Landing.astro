@@ -1,0 +1,73 @@
+---
+import farmSvg from "../assets/farm.svg";
+import menuSvg from "../assets/menu.svg";
+import cozyAtmosphere from "../assets/cozy.svg";
+import fireplaceSvg from "../assets/fireplace.svg";
+import momoImage from "../assets/momo.png";
+---
+
+<div class="bg-blue-50 flex flex-col justify-start mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="flex flex-col-reverse md:flex-row items-center justify-between"
+        >
+            {/* Left side - Restaurant description */}
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                    Welcome to
+                    <span class="text-green-600">Grill & Thrill</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    Experience a culinary journey like no other at Grill &
+                    Thrill. Our expert chefs blend traditional techniques with
+                    modern twists to create unforgettable dishes that will
+                    tantalize your taste buds.
+                </p>
+                <ul class="text-gray-600 mb-8">
+                    <li class="flex items-center mb-2 font-semibold">
+                        <img
+                            src={farmSvg.src}
+                            alt="Menu"
+                            class="h-10 w-10 mr-2"
+                        />
+                        Farm-to-table ingredients
+                    </li>
+                    <li class="flex items-center mb-2 font-semibold">
+                        <img
+                            src={menuSvg.src}
+                            alt="Menu"
+                            class="h-10 w-10 mr-2"
+                        />
+                        Innovative fusion cuisine
+                    </li>
+                    <li class="flex items-center font-semibold">
+                        <img
+                            src={fireplaceSvg.src}
+                            alt="Menu"
+                            class="h-10 w-10 mr-2"
+                        />
+                        Cozy and elegant atmosphere
+                    </li>
+                </ul>
+                <button
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    <a href="/menu"> See Menu </a>
+                </button>
+            </div>
+
+            {/* Right side - Restaurant image */}
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <div
+                    class="relative h-64 md:h-96 rounded-lg overflow-hidden md:pl-14"
+                >
+                    <img
+                        src={momoImage.src}
+                        alt="Grill & Thrill restaurant interior"
+                        class="w-full h-full object-cover rounded-lg"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

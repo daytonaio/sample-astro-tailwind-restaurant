@@ -1,0 +1,66 @@
+---
+const menuItems = [
+    {
+        name: "Momo",
+        description: "Delicious dumplings stuffed with vegetables or meat.",
+        type: "non-veg",
+        price: "Rs. 250",
+    },
+    {
+        name: "Veg Thali",
+        description:
+            "A wholesome platter with rice, lentils, vegetables, and pickles.",
+        type: "veg",
+        price: "Rs. 300",
+    },
+    {
+        name: "Machha Tarkari",
+        description: "Fish curry cooked in a spicy, aromatic Nepali gravy.",
+        type: "non-veg",
+        price: "Rs. 350",
+    },
+    {
+        name: "Sukuti",
+        description:
+            "Dried meat spiced and stir-fried, popular as a snack or side dish.",
+        type: "non-veg",
+        price: "Rs. 300",
+    },
+];
+---
+
+<section id="menu" class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Our Menu Highlights
+            </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                Discover our chef's selection of exquisite dishes
+            </p>
+        </div>
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+            {
+                menuItems.map((item) => (
+                    <div class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            {item.name}
+                        </h3>
+                        <p class="mt-2 text-gray-500">{item.description}</p>
+                        <p class="mt-4 text-amber-600 font-semibold">
+                            {item.price}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="mt-12 text-center">
+            <a
+                href="/menu"
+                class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-amber-700"
+            >
+                View Full Menu
+            </a>
+        </div>
+    </div>
+</section>
